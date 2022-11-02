@@ -63,21 +63,40 @@ function App() {
   }
 
   return (
-    <>
-      <p>Score: {score}</p>
-      <p>High Score: {highScore}</p>
-      <Button onClick={() => setHighScoreAndLocalStorage(0)}>
-        Reset Highscore
-      </Button>
+    <div className="flex justify-center items-center">
+      <main className="m-4 p-4 text-center flex flex-col items-center gap-4">
+        <div className="flex gap-8">
+          <div className="flex justify-between w-[120px]">
+            <strong>Score:</strong>
+            <span>{score}</span>
+          </div>
+          <div className="flex justify-between w-[120px]">
+            <strong>Highscore:</strong>
+            <span>{highScore}</span>
+          </div>
+        </div>
+        <Button onClick={() => setHighScoreAndLocalStorage(0)}>
+          Reset Highscore
+        </Button>
 
-      <div className="w-[200px] h-[200px]" style={{ backgroundColor: color }} />
+        <div
+          className="w-[300px] h-[300px]"
+          style={{ backgroundColor: color }}
+        />
 
-      <div className="flex gap-4 p-4">
-        <Button onClick={() => makeGuess(colorOption1)}>{colorOption1}</Button>
-        <Button onClick={() => makeGuess(colorOption2)}>{colorOption2}</Button>
-        <Button onClick={() => makeGuess(colorOption3)}>{colorOption3}</Button>
-      </div>
-    </>
+        <div className="flex gap-4">
+          <Button onClick={() => makeGuess(colorOption1)}>
+            {colorOption1}
+          </Button>
+          <Button onClick={() => makeGuess(colorOption2)}>
+            {colorOption2}
+          </Button>
+          <Button onClick={() => makeGuess(colorOption3)}>
+            {colorOption3}
+          </Button>
+        </div>
+      </main>
+    </div>
   );
 }
 
